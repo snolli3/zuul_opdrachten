@@ -1,4 +1,5 @@
 using System;
+using System.IO.Compression;
 
 class Game
 {
@@ -100,7 +101,7 @@ class Game
 				wantToQuit = true;
 				break;
 			case "look":
-				Console.WriteLine(currentRoom.GetLongDescription);
+				Console.WriteLine(currentRoom.GetLongDescription());
 				break;
 		}
 
