@@ -99,6 +99,8 @@ class Game
 			case "quit":
 				wantToQuit = true;
 				break;
+			case "look":
+				Console.WriteLine(currentRoom.GetLongDescription);
 		}
 
 		return wantToQuit;
