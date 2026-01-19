@@ -20,6 +20,7 @@ class Game
 		// Create the rooms
 		Room outside = new Room("outside the main entrance of the university");
 		Room theatre = new Room("in a lecture theatre");
+		Room theatreUp = new Room("upstage behind the curtains");
 		Room pub = new Room("in the campus pub");
 		Room lab = new Room("in a computing lab");
 		Room office = new Room("in the computing admin office");
@@ -30,6 +31,9 @@ class Game
 		outside.AddExit("west", pub);
 
 		theatre.AddExit("west", outside);
+		theatre.AddExit("up", theatreUp);
+
+		theatreUp.AddExit("down", theatre);
 
 		pub.AddExit("east", outside);
 
@@ -37,6 +41,7 @@ class Game
 		lab.AddExit("east", office);
 
 		office.AddExit("west", lab);
+
 
 		// Create your Items here
 		// ...
