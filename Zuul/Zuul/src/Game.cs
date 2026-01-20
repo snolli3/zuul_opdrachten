@@ -10,9 +10,9 @@ class Game
 	// Constructor
 	public Game()
 	{
+		CreateRooms();
 		parser = new Parser();
 		player = new Player();
-		CreateRooms();
 	}
 
 	// Initialise the Rooms (and the Items)
