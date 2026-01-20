@@ -5,7 +5,7 @@ class Game
 {
 	// Private fields
 	private Parser parser;
-	private Parser player;
+	private Player player;
 
 	// Constructor
 	public Game()
@@ -19,7 +19,6 @@ class Game
 	private void CreateRooms()
 	{
 		// Create the rooms
-		player.CurrentRoom = outside;
 
 		Room outside = new Room("outside the main entrance of the university");
 		Room theatre = new Room("in a lecture theatre");
@@ -27,6 +26,8 @@ class Game
 		Room pub = new Room("in the campus pub");
 		Room lab = new Room("in a computing lab");
 		Room office = new Room("in the computing admin office");
+
+		player.CurrentRoom = outside;
 
 		// Initialise room exits
 		outside.AddExit("east", theatre);
