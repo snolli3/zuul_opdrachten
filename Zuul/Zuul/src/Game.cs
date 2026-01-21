@@ -1,7 +1,51 @@
 using System;
 using System.IO.Compression;
 
-class Game
+internal class NewBaseType
+{
+
+    // Initialise the Rooms (and the Items)
+    private void CreateRooms()
+    {
+        // Create the rooms
+
+        Room outside = new Room("outside the main entrance of the university");
+        Room theatre = new Room("in a lecture theatre");
+        Room theatreUp = new Room("upstage behind the curtains");
+        Room pub = new Room("in the campus pub");
+        Room lab = new Room("in a computing lab");
+        Room office = new Room("in the computing admin office");
+
+        player.CurrentRoom = outside;
+
+        // Initialise room exits
+        outside.AddExit("east", theatre);
+        outside.AddExit("south", lab);
+        outside.AddExit("west", pub);
+
+        theatre.AddExit("west", outside);
+        theatre.AddExit("up", theatreUp);
+
+        theatreUp.AddExit("down", theatre);
+
+        pub.AddExit("east", outside);
+
+        lab.AddExit("north", outside);
+        lab.AddExit("east", office);
+
+        office.AddExit("west", lab);
+
+
+        // Create your Items here
+        // ...
+        // And add them to the Rooms
+        // ...
+
+
+    }
+}
+
+class Game : NewBaseType
 {
 	// Private fields
 	private Parser parser;
@@ -15,49 +59,8 @@ class Game
 		player = new Player();
 	}
 
-	// Initialise the Rooms (and the Items)
-	private void CreateRooms()
-	{
-		// Create the rooms
-
-		Room outside = new Room("outside the main entrance of the university");
-		Room theatre = new Room("in a lecture theatre");
-		Room theatreUp = new Room("upstage behind the curtains");
-		Room pub = new Room("in the campus pub");
-		Room lab = new Room("in a computing lab");
-		Room office = new Room("in the computing admin office");
-
-		player.CurrentRoom = outside;
-
-		// Initialise room exits
-		outside.AddExit("east", theatre);
-		outside.AddExit("south", lab);
-		outside.AddExit("west", pub);
-
-		theatre.AddExit("west", outside);
-		theatre.AddExit("up", theatreUp);
-
-		theatreUp.AddExit("down", theatre);
-
-		pub.AddExit("east", outside);
-
-		lab.AddExit("north", outside);
-		lab.AddExit("east", office);
-
-		office.AddExit("west", lab);
-
-
-		// Create your Items here
-		// ...
-		// And add them to the Rooms
-		// ...
-
-		// Start game outside
-		player.CurrentRoom = outside;
-	}
-
-	//  Main play routine. Loops until end of play.
-	public void Play()
+    //  Main play routine. Loops until end of play.
+    public void Play()
 	{
 		PrintWelcome();
 
