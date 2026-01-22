@@ -13,10 +13,6 @@ class Player
     
     
     // methods
-    ... Damage( amount) { /*...*/ } // speler verliest health
-    ... Heal(... amount) { /*...*/ } // speler krijgt health
-    ... IsAlive() { /*...*/ } // checkt of speler nog leeft
-
     public int Damage(int amount)
     {
         health = health - amount;

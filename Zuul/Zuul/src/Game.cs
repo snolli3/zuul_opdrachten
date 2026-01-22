@@ -110,6 +110,8 @@ class Game
 			case "look":
 				Console.WriteLine(player.CurrentRoom.GetLongDescription());
 				break;
+			case "status":
+			
 		}
 
 		return wantToQuit;
