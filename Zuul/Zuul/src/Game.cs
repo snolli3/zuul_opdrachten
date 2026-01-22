@@ -1,11 +1,21 @@
 using System;
 using System.IO.Compression;
 
-internal class NewBaseType
+class Game
 {
+	// Private fields
+	private Parser parser;
+	private Player player;
 
-    // Initialise the Rooms (and the Items)
-    private void CreateRooms()
+	// Constructor
+	public Game()
+	{
+		parser = new Parser();
+		player = new Player();
+		CreateRooms();
+	}
+
+	private void CreateRooms()
     {
         // Create the rooms
 
@@ -43,21 +53,6 @@ internal class NewBaseType
 
 
     }
-}
-
-class Game : NewBaseType
-{
-	// Private fields
-	private Parser parser;
-	private Player player;
-
-	// Constructor
-	public Game()
-	{
-		CreateRooms();
-		parser = new Parser();
-		player = new Player();
-	}
 
     //  Main play routine. Loops until end of play.
     public void Play()
