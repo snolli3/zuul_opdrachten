@@ -154,6 +154,15 @@ class Game
 			Console.WriteLine("There is no door to "+direction+"!");
 			return;
 		}
+		else
+		{
+			if (player.bleeding)
+			{
+				player.Damage(5);
+			}
+		}
+
+		
 
 		player.CurrentRoom = nextRoom;
 		Console.WriteLine(player.CurrentRoom.GetLongDescription());

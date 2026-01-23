@@ -4,11 +4,13 @@ class Player
     public Room CurrentRoom { get; set; }
     // fields
     public int health;
+    public bool bleeding;
     // constructor
     public Player()
     {
         CurrentRoom = null;
         health = 100;
+        bleeding = true;
     }
     
 
