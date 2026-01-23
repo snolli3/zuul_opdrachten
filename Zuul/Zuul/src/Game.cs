@@ -26,6 +26,8 @@ class Game
         Room lab = new Room("in a computing lab");
         Room office = new Room("in the computing admin office");
 
+
+
         player.CurrentRoom = outside;
 
         // Initialise room exits
@@ -47,9 +49,14 @@ class Game
 
 
         // Create your Items here
-        // ...
+        Item sword = new Item (1, "metal stick on wooden stick");
+		Item pillow = new Item (1, "cotton sleeve with feathers");
+		Item wand = new Item (1, "magic wonky wooden stick");
+		Item beer = new Item (1, "alcoholistic drink");
+
+
         // And add them to the Rooms
-        // ...
+        
 
 
     }
