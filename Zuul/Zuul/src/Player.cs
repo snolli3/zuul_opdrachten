@@ -3,7 +3,7 @@ class Player
     // auto property
     public Room CurrentRoom { get; set; }
     // fields
-    private int health;
+    public int health;
     // constructor
     public Player()
     {
@@ -11,7 +11,7 @@ class Player
         health = 100;
     }
     
-    
+
     // methods
     public int Damage(int amount)
     {
@@ -32,6 +32,6 @@ class Player
         {
             death = true;
         }
-        return death
+        return death;
     }
 }

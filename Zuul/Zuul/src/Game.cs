@@ -111,7 +111,9 @@ class Game
 				Console.WriteLine(player.CurrentRoom.GetLongDescription());
 				break;
 			case "status":
-			
+				Console.WriteLine("player health is: "+player.health);
+				break;
+
 		}
 
 		return wantToQuit;
