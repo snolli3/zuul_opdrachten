@@ -38,7 +38,7 @@ class Inventory
         {
             total = total + item.Weight;
         }
-        
+
         return total;
     }
     public int FreeWeight()
