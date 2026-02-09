@@ -43,8 +43,9 @@ class Inventory
     }
     public int FreeWeight()
     {
+
         // TODO implementeer:
         // Vergelijk MaxWeight en TotalWeight()
-        return ...;
+        return maxWeight-TotalWeight();
     }
 }
