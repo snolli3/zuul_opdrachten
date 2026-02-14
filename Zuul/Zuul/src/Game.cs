@@ -49,10 +49,11 @@ class Game
 
 
         // Create your Items here
-        Item sword = new Item (1, "metal stick on wooden stick");
+        Item sword = new Item (2, "metal stick on wooden stick");
 		Item pillow = new Item (1, "cotton sleeve with feathers");
 		Item wand = new Item (1, "magic wonky wooden stick");
 		Item beer = new Item (1, "alcoholistic drink");
+		Item key = new Item (1, "shiny key to open a door...")
 
 
         // And add them to the Rooms

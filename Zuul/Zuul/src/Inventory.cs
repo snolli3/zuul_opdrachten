@@ -12,6 +12,11 @@ class Inventory
     // methods
     public bool Put(string itemName, Item item)
     {
+        foreach (int Weight in Items)
+        {
+            Console.WriteLine(Weight);
+        }
+
         // TODO implementeer:
         // Check het gewicht van het Item
         // Is er genoeg ruimte in de Inventory?
