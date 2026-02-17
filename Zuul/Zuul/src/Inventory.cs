@@ -12,18 +12,17 @@ class Inventory
     // methods
     public bool Put(string itemName, Item item)
     {
-        foreach (int Weight in Items)
+        if (TotalWeight() + item.Weight > maxWeight);
         {
-            Console.WriteLine(Weight);
+            return false;
         }
-
         // TODO implementeer:
         // Check het gewicht van het Item
         // Is er genoeg ruimte in de Inventory?
         // Past het Item?
         // Zet Item in de Dictionary
         // Return true/false voor succes/mislukt
-        return false;
+        return true;
     }
 
     public Item Get(string itemName)

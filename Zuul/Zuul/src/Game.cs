@@ -20,29 +20,35 @@ class Game
         // Create the rooms
 
         Room outside = new Room("outside the main entrance of the university");
+
         Room theatre = new Room("in a lecture theatre");
+
         Room theatreUp = new Room("upstage behind the curtains");
+
         Room pub = new Room("in the campus pub");
         Room lab = new Room("in a computing lab");
         Room office = new Room("in the computing admin office");
+		Room hallway = new Room("in the hallway");
 
 
 
         player.CurrentRoom = outside;
 
         // Initialise room exits
-        outside.AddExit("east", theatre);
-        outside.AddExit("south", lab);
-        outside.AddExit("west", pub);
+		outside.AddExit("south", hallway);
 
-        theatre.AddExit("west", outside);
+        hallway.AddExit("east", theatre);
+        hallway.AddExit("south", lab);
+        hallway.AddExit("west", pub);
+
+        theatre.AddExit("west", hallway);
         theatre.AddExit("up", theatreUp);
 
         theatreUp.AddExit("down", theatre);
 
-        pub.AddExit("east", outside);
+        pub.AddExit("east", hallway);
 
-        lab.AddExit("north", outside);
+        lab.AddExit("north", hallway);
         lab.AddExit("east", office);
 
         office.AddExit("west", lab);
@@ -53,11 +59,16 @@ class Game
 		Item pillow = new Item (1, "cotton sleeve with feathers");
 		Item wand = new Item (1, "magic wonky wooden stick");
 		Item beer = new Item (1, "alcoholistic drink");
-		Item key = new Item (1, "shiny key to open a door...")
+		Item key = new Item (1, "shiny key to open a door...");
 
 
         // And add them to the Rooms
-        
+    	theatre.AddItem("wand", wand);
+		pub.AddItem("beer", beer);
+		office.AddItem("key", key);
+		hallway.AddItem("sword", sword);
+		lab.AddItem("pillow", pillow);
+
 
 
     }
@@ -117,9 +128,21 @@ class Game
 				break;
 			case "look":
 				Console.WriteLine(player.CurrentRoom.GetLongDescription());
+				player.CurrentRoom.showItems();
 				break;
 			case "status":
 				Console.WriteLine("player health is: "+player.health);
+				break;
+			case "put":
+				Console.WriteLine("you put this item in your inventory:");
+				break;
+			case "get":
+				Console.WriteLine("You grabbed the item");
+				break;
+			case "die":
+				Console.WriteLine(player.health = 0);
+				Console.WriteLine("you died");
+				wantToQuit = true;
 				break;
 
 		}

@@ -5,6 +5,7 @@ class Room
 	// Private fields
 	private string description;
 	private Dictionary<string, Room> exits; // stores exits of this room.
+	private Dictionary<string, Item> items = new Dictionary<string, Item>();
 
 	// Create a room described "description". Initially, it has no exits.
 	// "description" is something like "in a kitchen" or "in a court yard".
@@ -51,6 +52,22 @@ class Room
 
 	// Return a string describing the room's exits, for example
 	// "Exits: north, west".
+	public void showItems()
+	{
+		if (items.Count == 0)
+		{
+			Console.WriteLine("there are no items here");
+			return;
+		}
+		
+		Console.WriteLine("you found a:");
+		foreach (var kvp in items)
+		{
+			Console.WriteLine($"{kvp.Key} - {kvp.Value.Description}");
+			Console.WriteLine("take it?");
+		}
+	}
+
 	private string GetExitString()
 	{
 		string str = "Exits: ";
@@ -58,4 +75,12 @@ class Room
 
 		return str;
 	}
+
+	public void AddItem(string name, Item item)
+    {
+		items[name] = item;
+    }
+
+
+
 }
