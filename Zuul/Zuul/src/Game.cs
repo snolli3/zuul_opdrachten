@@ -141,7 +141,7 @@ class Game
 				break;
 			case "die":
 				Console.WriteLine(player.health = 0);
-				Console.WriteLine("you died");
+				Console.WriteLine("you died.");
 				wantToQuit = true;
 				break;
 

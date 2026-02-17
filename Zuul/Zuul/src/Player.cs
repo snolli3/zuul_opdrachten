@@ -34,7 +34,7 @@ class Player
         {
             death = true;
         }
-        Console.WriteLine("you died");
+        Console.WriteLine("you died.");
         return death;
     }
 }
